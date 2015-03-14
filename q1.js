@@ -58,20 +58,15 @@ $(document).ready(function() {
 
 //NATIVE
 
-// NOTE FOR REVIEW: I do know that forEach and .reduce exist, just used a for loop 
-// for browser support/demonstrating how we would have solved it in foundtations 2
-
 function nativeAverage(array) {
     
   var sum = 0;
-  var average = 0;
-
-  for(var i = 0; i < array.length; i++){
-    sum = sum + array[i].awesome_index;
-    average = sum/(i+1);
-  }
-
-  return average;
+  
+  array.forEach(function(x){
+    sum = sum + x.awesome_index;
+  });
+  
+  return sum/array.length;
 }
 
 var nativeButton = document.querySelector('.native button');
