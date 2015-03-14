@@ -1,0 +1,50 @@
+.average-index {
+	width: 100%;
+}
+
+.average-index h1 {
+	text-align: center;
+	color: tomato;
+	text-transform: uppercase;
+	font-size: 25px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+	font-family: 'raleway';
+}
+
+.average-index p {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 25px;
+	color: #33CC99;
+	padding-top: 25px;
+	font-family: 'raleway';
+}
+
+.average-index em {
+	color: red;
+}
+
+.button {
+	width: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 25px;
+
+}
+
+button {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+.lodash {
+
+}
+
+.native {
+	padding-top: 50px;
+}
