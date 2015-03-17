@@ -5,7 +5,7 @@
 // are added to the array. Write two versions, one using lodash 
 // (or underscore) and jQuery, and one using only Javascript utilities native to the browser.
 
-"use strict";
+'use strict';
 
 var _ = require('underscore'),
 $ = require('jquery');
@@ -39,6 +39,7 @@ var programmerIndex = [
 ];
 
 //LODASH + JQUERY
+
 $(document).ready(function() {
 
   var lodashAverage = function(awesomeArray) {
@@ -49,12 +50,11 @@ $(document).ready(function() {
     return awesomeSum / awesomeArray.length;
   };
 
-  $('.average-index .lodash button').click(function(){
+  $('.average-index .lodash button').click(function() {
     $('.average-index .lodash p').replaceWith('<p> <em>_.</em> and <em>$</em> example: ' + lodashAverage(programmerIndex) + '</p>' );
   });
 
 });
-
 
 //NATIVE
 
@@ -62,16 +62,16 @@ function nativeAverage(array) {
     
   var sum = 0;
   
-  array.forEach(function(x){
+  array.forEach(function(x) {
     sum = sum + x.awesome_index;
   });
   
-  return sum/array.length;
+  return sum / array.length;
 }
 
 var nativeButton = document.querySelector('.native button');
 var nativeP = document.querySelector('.native p');
 
-nativeButton.addEventListener('click', function(){
+nativeButton.addEventListener('click', function() {
   nativeP.innerHTML = '<em>Native JS</em> example: ' + nativeAverage(programmerIndex) ;
 });

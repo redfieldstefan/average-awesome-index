@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 	'use strict';
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-jscs');
 	grunt.loadNpmTasks('grunt-browserify');
 
 	grunt.initConfig({
@@ -29,14 +30,25 @@ module.exports = function(grunt) {
 
 			tasks: [
 				'jshint',
+				'jscs',
 				'browserify:dev'
 			]
-		} 
+		},
+
+		jscs: {
+			src: ['q1.js'],
+
+		    options: {
+		    	config: '.jscsrc'
+		    }				
+    	}
+
 
 	});
 
 	grunt.registerTask('default', [
 		'jshint',
+		'jscs',
 		'browserify:dev',
 		'watch'
 	]);
