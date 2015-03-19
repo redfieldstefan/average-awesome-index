@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		jshint: {
 			files: [
-				"q1.js"
+				"average-awesome-index.js"
 			],
 
 			options: {
@@ -18,14 +18,14 @@ module.exports = function(grunt) {
 
 		browserify: {
 			dev: {
-				src: ['q1.js'],
+				src: ['average-awesome-index.js'],
 				dest: 'bundle.js'
 			}
 		},
 
 		watch: {
 			files: [
-				'q1.js'
+				'average-awesome-index.js'
 			],
 
 			tasks: [
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		},
 
 		jscs: {
-			src: ['q1.js'],
+			src: ['average-awesome-index.js'],
 
 		    options: {
 		    	config: '.jscsrc'
