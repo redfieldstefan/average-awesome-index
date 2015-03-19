@@ -1,14 +1,14 @@
 // Write a function that takes an array of data in the below format. 
 // Assume that this function is run in a browser. It should update a 
-//<p> tag with id="awesome-index" withthe average awesome-index of all programmers. 
+//<p> tag with id="awesome-index" with the average awesome-index of all programmers. 
 // Your solution should continue to work even if more people 
 // are added to the array. Write two versions, one using lodash 
 // (or underscore) and jQuery, and one using only Javascript utilities native to the browser.
 
 'use strict';
 
-var _ = require('underscore'),
-$ = require('jquery');
+var _ = require('underscore');
+var $ = require('jquery');
 
 var programmerIndex = [
   {
@@ -42,12 +42,12 @@ var programmerIndex = [
 
 $(document).ready(function() {
 
-  var lodashAverage = function(awesomeArray) {
-    var awesomeSum = _.reduce(awesomeArray, function(accumulator, person) {
+  var lodashAverage = function(arr) {
+    var awesomeSum = _.reduce(arr, function(accumulator, person) {
       return accumulator + person.awesome_index;
     }, 0);
 
-    return awesomeSum / awesomeArray.length;
+    return awesomeSum / arr.length;
   };
 
   $('.average-index .lodash button').click(function() {
@@ -58,20 +58,20 @@ $(document).ready(function() {
 
 //NATIVE
 
-function nativeAverage(array) {
+function nativeAverage(arr) {
     
   var sum = 0;
   
-  array.forEach(function(x) {
+  arr.forEach(function(x) {
     sum = sum + x.awesome_index;
   });
   
-  return sum / array.length;
+  return sum / arr.length;
 }
 
 var nativeButton = document.querySelector('.native button');
 var nativeP = document.querySelector('.native p');
 
 nativeButton.addEventListener('click', function() {
-  nativeP.innerHTML = '<em>Native JS</em> example: ' + nativeAverage(programmerIndex) ;
+  nativeP.innerHTML = '<em>Native JS</em> example: ' + nativeAverage(programmerIndex);
 });
