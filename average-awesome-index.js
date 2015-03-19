@@ -51,7 +51,7 @@ $(document).ready(function() {
   };
 
   $('.average-index .lodash button').click(function() {
-    $('.average-index .lodash p').replaceWith('<p> <em>_.</em> and <em>$</em> example: ' + lodashAverage(programmerIndex) + '</p>' );
+    $('.average-index .lodash p').html('<em>_.</em> and <em>$</em> example: ' + lodashAverage(programmerIndex));
   });
 
 });
